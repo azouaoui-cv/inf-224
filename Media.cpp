@@ -1,11 +1,8 @@
 #include "Media.h"
 
+using namespace std;
 
-//using namespace std;
-
-//Media() {name="", fileName=""}
-//Media(std::string name, std::string fileName) : name(name), fileName(fileName) {}
-
-void Media::printMedia(std::ostream & s) const {
-  s << "Name: " << getName() << ", PathName: " << getFileName() << std::endl;
+void Media::printMedia(ostream & s) const {
+  //prints the media name and pathname.
+  s << "Name: " << getName() << ", PathName: " << getFileName() << endl;
 }
