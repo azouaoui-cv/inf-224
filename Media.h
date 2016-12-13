@@ -9,14 +9,14 @@ class Media {
     std::string name, fileName;
 
   public:
-    Media();
-    Media(std::string name, std::string fileName);
+    Media() : name(""), fileName("") {}
+    Media(std::string name, std::string fileName) : name(name), fileName(fileName) {}
     virtual ~Media() {};
     virtual void setName (std::string name) { this->name=name; };
     virtual void setFileName (std::string fileName) { this->fileName=fileName; };
     std::string getName() const { return name; };
     std::string getFileName() const { return fileName; };
-    virtual void printMedia(ostream & s) const;
+    virtual void printMedia(std::ostream & s) const;
 
 };
 
