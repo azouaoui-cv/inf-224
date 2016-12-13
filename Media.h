@@ -17,7 +17,7 @@ class Media {
     virtual ~Media() {};
 
     //setters
-    virtual void setName (std::string name) { this->name=name; }; //setter
+    virtual void setName (std::string name) { this->name=name; };
     virtual void setFileName (std::string fileName) { this->fileName=fileName; };
 
     //getters
@@ -25,8 +25,8 @@ class Media {
     std::string getFileName() const { return fileName; };
 
     //printing method
-    virtual void printMedia(std::ostream & s) const;
+    virtual void print(std::ostream & s) const;
 
 };
 
-#endif
+#endif _Media_
