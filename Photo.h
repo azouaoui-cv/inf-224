@@ -10,9 +10,9 @@ class Photo : public Media {
 
   public:
     //constructors
-    Photo() : latitude(0.0), longitude(0.0) {}
-    Photo(std::string name, std::string fileName, float latitude, float longitude) : Media(name, fileName), latitude(latitude),
-    longitude(longitude) {}
+    //Constructor with default values
+    Photo(std::string name = "", std::string fileName = "", float latitude = 0.0, float longitude = 0.0) : Media(name, fileName), latitude(latitude),
+    longitude(longitude) {};
 
     //destructors
     virtual ~Photo() {};

@@ -10,8 +10,7 @@ class Media {
 
   public:
     //constructors
-    Media() : name(""), fileName("") {} //empty constructor
-    Media(std::string name, std::string fileName) : name(name), fileName(fileName) {}
+    Media(std::string name = "", std::string fileName = "") : name(name), fileName(fileName) {}; //constructor with default empty values
 
     //destructors
     virtual ~Media() {};

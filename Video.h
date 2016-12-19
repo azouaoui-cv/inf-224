@@ -11,8 +11,8 @@ class Video : public Media {
 
   public:
     //constructors
-    Video() : duration(0) {}
-    Video(std::string name, std::string fileName, unsigned int duration) : Media(name, fileName), duration(duration) {}
+    //Constructor with default values
+    Video(std::string name = "", std::string fileName = "", unsigned int duration = 0) : Media(name, fileName), duration(duration) {};
 
     //destructors
     virtual ~Video() {};
