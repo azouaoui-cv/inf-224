@@ -25,4 +25,17 @@ int main() {
   v2->play();
   p2->play();
 
+  //Step 5 : building an array of media
+  Media ** medium = new Media * [8];
+  unsigned int count = 0;
+  medium[count++] = v1;
+  medium[count++] = p1;
+  medium[count++] = v2;
+  medium[count++] = p2;
+
+  //Looping to play every media in the array
+  for (unsigned int index = 0; index < count; index++){
+    medium[index]->play();
+  }
+
 }
