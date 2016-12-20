@@ -26,7 +26,10 @@ class Video : public Media {
     //printing method
     void print(std::ostream & s) const override;
 
+    //playing method
+    void play() const override;
+
 
 };
 
-#endif _Video_
+#endif

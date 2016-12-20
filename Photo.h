@@ -28,6 +28,9 @@ class Photo : public Media {
     //print method
     void print(std::ostream & s) const override;
 
+    //playing method
+    void play() const override;
+
 };
 
-#endif _Photo_
+#endif

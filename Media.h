@@ -26,6 +26,9 @@ class Media {
     //printing method
     virtual void print(std::ostream & s) const;
 
+    //abstract playing method
+    virtual void play() const = 0;
+
 };
 
-#endif _Media_
+#endif

@@ -1,7 +1,7 @@
 # inf-224
 I have been developing this software on my own computer running on the 16.04 Ubuntu distribution, using Atom as an IDE.
 
-First lab session on Wednesday, the 13th December:
+First lab session on Tuesday, the 13th December:
 I started declaring private variables and public methods in the Media.h file.
 I used inline definition for most methods but the printing method.
 I used only one constructor, initiating the variables with default values as a way to call the said constructor with empty arguments.
@@ -13,3 +13,6 @@ I modified the SOURCES variable accordingly for each run, using only the .cpp fi
 I run the program by typing $make run in the directory used to develop.
 
 In the 4th step, I chose to be consistent by splitting Video and Photo in two files each (.cpp and .h extensions).
+The "play" method does not have any implementation in the Media class. It is indeed an abstract method.
+In doing so, the Media class becomes abstract. I will not be able to instantiate any Media object.
+I muss therefore get rid of the previous main.cpp version by commenting useless lines.
