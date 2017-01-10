@@ -24,3 +24,13 @@ To do so, I had to use the "virtual" keyword in the declaration of the functions
 as it is done in Java by default.
 The type of the array elements is Media. The array contains pointers to the objects I added to the array.
 As a result, the method invoked is the method of the pointed object as in Java.
+
+Note: En C++, on utilise des pointeurs pour le polymorphisme !
+
+In the 6th step, I created two attributes in the Film class: an array of duration and a chapter counter.
+I built a constructor using default values and taking in parameters a constant table to affect it to the object duration array.
+I then copied the table element by element.
+I built a destructor and added a delete [] instruction to delete the duration array when the delete function is being called onto the object.
+To set the duration array, I did the same as in the constructor, not forgetting to delete the duration array beforehand.
+To retrieve the duration array, I declared the returned int pointer to be const as well as the object being left untouched to make sure encapsulation was done right. I included an integer parameter to be called by reference to get both the array and the chapter counter when calling getDurationArray.
+Lastly, I redefined the printing method to print the duration of each chapter in addition to the traditionnal printing of the Video object.

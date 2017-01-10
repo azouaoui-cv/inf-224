@@ -7,7 +7,7 @@ class Video : public Media {
 
   private:
     //attributes
-    unsigned int duration;
+    unsigned int duration = 0;
 
   public:
     //constructors

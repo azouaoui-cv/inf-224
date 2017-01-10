@@ -6,7 +6,8 @@
 class Media {
 
   private:
-    std::string name, fileName;
+    std::string name = "";
+    std::string fileName = "";
 
   public:
     //constructors

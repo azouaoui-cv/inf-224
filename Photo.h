@@ -6,7 +6,8 @@ class Photo : public Media {
 
   private:
     //attributes
-    float latitude, longitude;
+    float latitude = 0.0;
+    float longitude = 0.0;
 
   public:
     //constructors
