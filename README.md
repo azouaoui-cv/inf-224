@@ -34,3 +34,17 @@ I built a destructor and added a delete [] instruction to delete the duration ar
 To set the duration array, I did the same as in the constructor, not forgetting to delete the duration array beforehand.
 To retrieve the duration array, I declared the returned int pointer to be const as well as the object being left untouched to make sure encapsulation was done right. I included an integer parameter to be called by reference to get both the array and the chapter counter when calling getDurationArray.
 Lastly, I redefined the printing method to print the duration of each chapter in addition to the traditionnal printing of the Video object.
+
+In the 7th step, I have to handle dynamic memory. In the classes I created, only Film could be a threat when it comes to memory leak.
+This is the reason why I made sure I deleted the duration array upon the call of the destructor of Film. The destructor is being called before the actual deleting a Film object.
+Copying objects could be a threat too: Imagine I were to copy the duration array into a whole new array each time I called the getDurationArray method,
+the developer would not know this but this could lead to a memory leak.
+On the other hand, I need to make sure I delete the previous duration array when I call the setDurationArray method and build a new one based on the array given in the parameters.
+
+8th step:
+I defined a new type "MediaList" using typedef that is a list of Media objects. The Group class then heritates the MediaList type.
+I built a constructor to define the name of the group.
+I implemented the print method by using now standard c++11 syntax when it comes to iterators.
+At first I omitted the * before "this" but it is necessary to get to the list-like object and then iterating on its elements.
+In the main, I made sure to test whether the objects contained in the group were deleted or not when deleting the group object.
+I left the destructor blank but it is calling the linked destructors "above" it.

@@ -1,10 +1,11 @@
 #include "Photo.h"
+#include <iostream>
 
 using namespace std;
 
 void Photo::print(ostream & s) const {
   s << "Name: " << getName() << ", PathName: " << getFileName() << ", Latitude: " << getLatitude()
-  <<", Longitude: " << getLongitude() << endl;
+  << ", Longitude: " << getLongitude() << endl;
 }
 
 void Photo::play() const {

@@ -2,24 +2,20 @@
 #include "Video.h"
 #include "Photo.h"
 #include "Film.h"
+#include "Group.h"
+#include <iostream>
 
 using namespace std;
 
 int main() {
 
+/*
   //Before step 4
   //Media * m1 = new Media();
   //Media * m2 = new Media("myMedia", "/my/Path/Name");
 
-  //step 6
-  unsigned int chapterCounter1 = 10;
-  unsigned int * durationArray1 = new unsigned int [chapterCounter1];
 
-  unsigned int count1 = 0;
-  durationArray1[count1++] = 360;
-  durationArray1[count1++] = 180;
-  durationArray1[count1++] = 90;
-  durationArray1[count1++] = 45;
+*/
 
 
   Video * v1 = new Video();
@@ -27,11 +23,7 @@ int main() {
   Photo * p1 = new Photo();
   Photo * p2 = new Photo("myPhoto", "/my/Path/Name/to/Photo", 4.2, 4.2);
 
-  //step 6
-  Film * f1 = new Film();
-  Film * f2 = new Film("myFilm", "/my/Path/Name/to/Film", 675, durationArray1, count1);
-  unsigned int size = 0;
-  const unsigned int * durationArray2 = f2->getDurationArray(size);
+/*
 
   //Before step 4
   //m1->print(std::cout);
@@ -43,9 +35,7 @@ int main() {
   v2->play();
   p2->play();
 
-  //step 6
-  f1->print(cout);
-  f2->print(cout);
+
 
   //Step 5 : building an array of media
   Media ** medium = new Media * [8];
@@ -60,11 +50,89 @@ int main() {
     medium[index]->play();
   }
 
+
+
+  //step 6
+  unsigned int * durationArray1 = new unsigned int [10];
+
+  unsigned int count1 = 0;
+  durationArray1[count1++] = 360;
+  durationArray1[count1++] = 180;
+  durationArray1[count1++] = 90;
+  durationArray1[count1++] = 45;
+
+  Film * f1 = new Film();
+  Film * f2 = new Film("myFilm", "/my/Path/Name/to/Film", 675, durationArray1, count1);
+  unsigned int size = 0;
+  const unsigned int * durationArray2 = f2->getDurationArray(size);
+
+  cout << "size: " << size << endl;
+
+  //step 6
+  f1->print(cout);
+  f2->print(cout);
+
+
   //Looping to print every chapter duration of the array contained in a film object
+  cout << "Testing looping in a duration array 1" << endl;
+
   for (unsigned int index = 0; index < size ; index++){
-    cout << index << " chapter: " << durationArray2[index] << endl;
+    cout << "chapter: " << index << " " << durationArray1[index] << endl;
   }
 
+  cout << "counter: " << count1 << endl;
 
+  durationArray1[count1++] = 20;
+
+  cout << "counter: " << count1 << endl;
+
+  cout << durationArray1[count1 - 1] << endl;
+
+  //Testing the setDurationArray method
+
+
+  cout << "Testing the setDurationArray method by printing the modified film object" << endl;
+
+  f2->setDurationArray(durationArray1, count1);
+
+  f2->print(cout);
+
+
+  cout << "Testing retrieving the previously setted duration array to assign it to a new const duration array" << endl;
+
+  unsigned int size1 = 0;
+  const unsigned int * durationArray3 = f2->getDurationArray(size1);
+
+  cout << "size: " << size1 << endl;
+
+
+
+
+  //Looping to print every chapter duration of the array contained in a film object
+  for (unsigned int index = 0; index < size1 ; index++){
+    cout << index << " chapter: " << durationArray3[index] << endl;
+  }
+
+  f2->print(cout);
+
+*/
+
+  //Step 8
+
+  Group * g1 = new Group("my Group");
+  g1->push_back(v1);
+  g1->push_back(v2);
+  g1->push_back(p1);
+
+  g1->print(cout);
+
+  delete g1;
+
+  cout << "Group deleted" << endl;
+
+  p1->print(cout);
+  v1->print(cout);
+  v2->print(cout);
+  //The objects still exist!
 
 }
