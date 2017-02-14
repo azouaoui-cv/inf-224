@@ -17,11 +17,13 @@ int main() {
 
 */
 
+/*
 
   Video * v1 = new Video();
   Video * v2 = new Video("myVideo", "/my/Path/Name/to/Video", 360);
   Photo * p1 = new Photo();
   Photo * p2 = new Photo("myPhoto", "/my/Path/Name/to/Photo", 4.2, 4.2);
+/*
 
 /*
 
@@ -119,6 +121,7 @@ int main() {
 
   //Step 8
 
+/*
   Group * g1 = new Group("my Group");
   g1->push_back(v1);
   g1->push_back(v2);
@@ -128,11 +131,69 @@ int main() {
 
   delete g1;
 
+  g1 = nullptr;
+
   cout << "Group deleted" << endl;
 
   p1->print(cout);
   v1->print(cout);
   v2->print(cout);
   //The objects still exist!
+
+  cout << "Multiple group test" << endl;
+
+  g1 = new Group("my Group");
+  g1->push_back(v1);
+  g1->push_back(v2);
+  g1->push_back(p1);
+
+
+  g1->print(cout);
+
+  Group * g2 = new Group("my new Group");
+  g2->push_back(v1);
+  g2->push_back(v2);
+  g2->push_back(p1);
+
+  g2->print(cout);
+
+  delete g2;
+
+  g1->print(cout);
+
+*/
+
+  //step 9
+
+  cout << "Shared pointers declaration" << endl;
+
+  shared_ptr<Video> v1(new Video());
+  shared_ptr<Video> v2(new Video("myVideo", "/my/Path/Name/to/Video", 360));
+  shared_ptr<Photo> p1(new Photo());
+  shared_ptr<Photo> p2(new Photo("myPhoto", "/my/Path/Name/to/Photo", 4.2, 4.2));
+
+  cout << "Group creation and printing" << endl;
+
+  Group * g1 = new Group("my Group");
+  g1->push_back(v1);
+  g1->push_back(v2);
+  g1->push_back(p1);
+
+  g1->print(cout);
+
+  v1.reset();
+  v2.reset();
+  p1.reset();
+
+  cout << "main: Photo popped" << endl;
+
+  g1->pop_back();
+  //cout << "printing p1" << endl;
+
+  //p1->print(cout);
+
+  cout << "Checking if the deleted video is still in the group" << endl;
+
+  g1->print(cout);
 
 }

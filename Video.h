@@ -15,7 +15,7 @@ class Video : public Media {
     Video(std::string name = "", std::string fileName = "", unsigned int duration = 0) : Media(name, fileName), duration(duration) {};
 
     //destructors
-    virtual ~Video() {};
+    virtual ~Video() {std::cout << "Video " << getName() << " is dying." << std::endl;};
 
     //setters
     virtual void setDuration(unsigned int duration) {this->duration=duration;};

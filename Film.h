@@ -25,7 +25,8 @@ class Film : public Video {
     };
 
     //destructors
-    virtual ~Film() {delete [] durationArray;};
+    virtual ~Film() {delete [] durationArray;
+       std::cout << "Film " << getName() << " is dying." << std::endl; };
 
     //setters
     virtual void setDurationArray(const unsigned int * _durationArray, unsigned int _durationArrayCounter) {
@@ -42,8 +43,6 @@ class Film : public Video {
       _chapterCounter = chapterCounter;
       return durationArray;
     };
-
-    //unsigned int getChapterCounter() const {return chapterCounter;};
 
 
     //printing method

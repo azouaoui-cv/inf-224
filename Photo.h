@@ -16,7 +16,7 @@ class Photo : public Media {
     longitude(longitude) {};
 
     //destructors
-    virtual ~Photo() {};
+    virtual ~Photo() {std::cout << "Photo " << getName() << " is dying." << std::endl;};
 
     //setters
     virtual void setLatitude(float latitude) {this->latitude=latitude;};

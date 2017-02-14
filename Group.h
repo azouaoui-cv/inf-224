@@ -2,9 +2,10 @@
 #define _Group_
 #include <list>
 #include "Media.h"
+#include <memory>
 
-
-typedef std::list<Media*> MediaList;
+typedef std::shared_ptr<Media> MediaPtr;
+typedef std::list<MediaPtr> MediaList;
 
 class Group : public MediaList {
 
